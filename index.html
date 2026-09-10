@@ -1,15 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>ChromeOS Utilities</title>
-  <style>
-    body { font-family: sans-serif; }
-    ul { list-style-type: none; padding-left: 20px; }
-    a { text-decoration: none; color: #0366d6; }
-  </style>
+    <meta charset="UTF-8">
+    <title>ChromeOS Utilities</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; }
+        ul { list-style-type: none; padding-left: 20px; }
+        a { text-decoration: none; color: #0366d6; }
+        ol { padding-left: 20px; }
+        li { margin-bottom: 12px; }
+        kbd { background-color: #f7f7f7; border: 1px solid #ccc; border-radius: 3px; box-shadow: 0 1px 0 rgba(0,0,0,0.2); color: #333; display: inline-block; font-size: 0.85em; padding: 1px 5px; white-space: nowrap; }
+        code { background-color: #f1f1f1; padding: 2px 4px; border-radius: 4px; font-family: monospace; }
+    </style>
 </head>
 <body>
-  <h1>📁 ChromeOS Utilities</h1>
-  <h3>This collection was created by K-KScripts! Check out the source <a href="https://github.com/K-KScripts/chromebook-utilities">here</a>. </h3>
-  <h3>Read the <a href="https://github.com/K-KScripts/chromebook-utilities/blob/main/Important/DISCLAIMER.md">disclaimer</a> before viewing this repo further. </h3>
+    <h1>ChromeOS Utilities</h1>
+    <h3>This collection was created by K-Kscripts! Check out the source <a href="https://github.com/K-KScripts/chromebook-utilities">here</a>.</h3>
+    <h3>Read the <a href="https://github.com/K-KScripts/chromebook-utilities/blob/main/Important/DISCLAIMER.md">disclaimer</a> before viewing this repo further.</h3>
+    
+    <hr>
+
+    <h2>1. DOWNGRADE CHROME OS</h2>
+    <p>Downgrading can be used for several exploits, to get to a version that doesn't have patches for certain exploits, such as LTBEEF.</p>
+    <p>This is a built-in feature of ChromeOS.</p>
+
+    <p>You'll need a USB thumb drive with at least 4GB of storage (some boards have smaller or bigger images, so to have a "beefy" USB, I recommend 16GB) and a personal computer with access to downloading extensions.</p>
+
+    <ol>
+        <li>Navigate to <code>chrome://version</code> on the chromebook you wish to downgrade and check for your board under "Platform" (it's the text after stable-channel).</li>
+        <li>Navigate to <a href="https://chrome100.dev" target="_blank">chrome100.dev</a>, press <kbd>Ctrl</kbd> + <kbd>F</kbd> and type in your board.</li>
+        <li>Find and download the chrome version you want to your personal computer.</li>
+        <li>Install Chrome Recovery Utility onto your personal computer.</li>
+        <li>Open the extension, and click on the settings button in the top right hand corner, click "use local image".</li>
+        <li>Select the recovery image you downloaded from chrome100.</li>
+        <li>Plug in the USB you wish to use, and follow the prompts on the screen.</li>
+        <li>On your chromebook, press <kbd>Esc</kbd> + <kbd>Reload</kbd> + <kbd>Power</kbd> and follow the prompts.</li>
+        <li>On the checking for updates screen, press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>E</kbd> to skip the "checking for updates" screen.</li>
+    </ol>
+</body>
+</html>
